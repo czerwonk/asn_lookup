@@ -16,7 +16,7 @@ type Bird struct {
 }
 
 func New(bird4Socket, bird6Socket string) *Bird {
-	return &Bird{bird4SocketPath: bird4Socket, bird6SocketPath: bird6Socket, regex: regexp.MustCompile("([^\\s]+)[\\s]+via")}
+	return &Bird{bird4SocketPath: bird4Socket, bird6SocketPath: bird6Socket, regex: regexp.MustCompile("([^\\s]+)[\\s]+(?:via|unreachable)")}
 }
 
 func (b *Bird) GetAs(a string) (*asn.AutonomousSystem, error) {
