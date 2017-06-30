@@ -10,7 +10,8 @@ By default the service listens on port 10179 for incoming requests
 # Running
 In this exaple the socket is located at /usr/local/var/run/. This can vary in different setups:
 ```
-asn_lookup -bird.socket=/usr/local/var/run/bird.ctl -bird6.socket=/usr/local/var/run/bird6.ctl```
+asn_lookup -bird.socket=/usr/local/var/run/bird.ctl -bird6.socket=/usr/local/var/run/bird6.ctl
+```
 
 # Usage
 ## Request
