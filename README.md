@@ -5,7 +5,7 @@
 Webservice providing announced prefixes of an specific ASN based on routing daemon information
 
 ## Supported routing daemons
-* Bird(https://bird.network.cz/)
+* [Bird](http://bird.network.cz/)
 
 ## License
 (c) Daniel Czerwonk, 2017. Licensed under [MIT](LICENSE) license.
