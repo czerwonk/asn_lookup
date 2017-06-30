@@ -7,6 +7,11 @@ Webservice providing announced prefixes of an specific ASN based on routing daem
 ## Default port
 By default the service listens on port 10179 for incoming requests
 
+## Installation
+```
+go get -u github.com/czerwonk/asn_lookup
+```
+
 ## Running
 In this exaple the socket is located at /usr/local/var/run/. This can vary in different setups:
 ```
