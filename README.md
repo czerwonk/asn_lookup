@@ -13,7 +13,7 @@ In this exaple the socket is located at /usr/local/var/run/. This can vary in di
 asn_lookup -bird.socket=/usr/local/var/run/bird.ctl -bird6.socket=/usr/local/var/run/bird6.ctl
 ```
 
-## Usage
+## Usage (Example)
 ### Request
 ```
 curl http://[::]:10179/asn/15169
