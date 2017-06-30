@@ -35,9 +35,6 @@ curl http://[::]:10179/asn/15169
 ## License
 (c) Daniel Czerwonk, 2017. Licensed under [MIT](LICENSE) license.
 
-## Bird routing daemon
-see http://bird.network.cz/
-
 [travis]: https://travis-ci.org/czerwonk/asn_lookup
 [goreportcard]: https://goreportcard.com/report/github.com/czerwonk/asn_lookup
 
