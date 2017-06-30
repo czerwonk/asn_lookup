@@ -1,2 +1,2 @@
 # asn_lookup
-Webservice for looking up prefixes announced by AS's based on routing daemon information
+Webservice providing announced prefixes of an specific ASN based on routing daemon information
