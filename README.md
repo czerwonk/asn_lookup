@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/czerwonk/asn_lookup.svg)](https://travis-ci.org/czerwonk/asn_lookup)
 [![Go Report Card](https://goreportcard.com/badge/github.com/czerwonk/asn_lookup)](https://goreportcard.com/report/github.com/czerwonk/asn_lookup)
 
-Webservice providing announced prefixes of an specific ASN based on routing daemon information
+Webservice providing prefixes announced by a specific ASN based on routing daemon information
 
 ## Default port
 By default the service listens on port 10179 for incoming requests
