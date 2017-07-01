@@ -42,7 +42,7 @@ func (b *Bird) GetAs(a string) (*asn.AutonomousSystem, error) {
 
 func (b *Bird) GetPrefixes(socketPath string, asn string) ([]string, error) {
 	qry := fmt.Sprintf("show route filter { if bgp_path.last = %s then accept; reject; }", asn)
-	resp, err := bird_socket.Query(socketPath, qry)
+	resp, err := birdsocket.Query(socketPath, qry)
 	if err != nil {
 		return nil, err
 	}
