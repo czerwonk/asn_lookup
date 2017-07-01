@@ -1,6 +1,6 @@
 # asn_lookup
-[![Build Status](https://travis-ci.org/czerwonk/asn_lookup.svg)][travis]
-[![Go Report Card](https://goreportcard.com/badge/github.com/czerwonk/asn_lookup)][goreportcard]
+[![Build Status](https://travis-ci.org/czerwonk/asn_lookup.svg)](https://travis-ci.org/czerwonk/asn_lookup)
+[![Go Report Card](https://goreportcard.com/badge/github.com/czerwonk/asn_lookup)](https://goreportcard.com/report/github.com/czerwonk/asn_lookup)
 
 Webservice providing announced prefixes of an specific ASN based on routing daemon information
 
@@ -34,7 +34,4 @@ curl http://[::]:10179/asn/15169
 
 ## License
 (c) Daniel Czerwonk, 2017. Licensed under [MIT](LICENSE) license.
-
-[travis]: https://travis-ci.org/czerwonk/asn_lookup
-[goreportcard]: https://goreportcard.com/report/github.com/czerwonk/asn_lookup
 
