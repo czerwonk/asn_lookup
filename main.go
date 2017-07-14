@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 	"os"
 
@@ -11,7 +12,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-const version = "0.1"
+const version = "0.2"
 
 var (
 	showVersion   = flag.Bool("version", false, "Show version information")
@@ -41,6 +42,7 @@ func printVersion() {
 func startServer() {
 	r := mux.NewRouter().StrictSlash(true)
 	r.HandleFunc("/asn/{asn}", handleAsnRequest)
+	r.HandleFunc("/asn", lookupAsnHandler)
 
 	log.Printf("Starting server to listen on %s\n", *listenAddress)
 
@@ -57,10 +59,37 @@ func startServer() {
 
 func handleAsnRequest(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	asn := vars["asn"]
+	a := vars["asn"]
 
 	b := bird.New(*birdSocket, *bird6Socket)
-	as, err := b.GetAs(asn)
+
+	as, err := b.GetAs(a)
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	xml, err := as.ToXml()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	w.Write(xml)
+}
+
+func lookupAsnHandler(w http.ResponseWriter, r *http.Request) {
+	ip := r.URL.Query().Get("ip")
+	x := net.ParseIP(ip)
+
+	if x == nil {
+		http.Error(w, "No IP specified", 400)
+		return
+	}
+
+	b := bird.New(*birdSocket, *bird6Socket)
+
+	as, err := b.GetAsByIP(x)
 	if err != nil {
 		log.Println(err)
 		return
